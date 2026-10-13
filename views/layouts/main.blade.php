@@ -178,7 +178,7 @@
                 </ul>
                 <ul class="menu">
                     <li class="search">
-                        <a href="#" class="search" data-modal="modal-search" title="{{ __('Search docs') }}" aria-label="{{ __('Search docs') }}">
+                        <a href="#" class="search" data-modal="modal-search" title="{{ __('Search docs') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                             </svg>
@@ -247,6 +247,9 @@
             <div class="container">
                 <span class="copyright">
                     &copy; {{ date('Y') }} {{ cmsconfig($page, 'website.data.title', cms($page->ancestorsAndSelf->first() ?? $page, 'name')) }}
+                </span>
+                <span class="powered">
+                    {!! __('Powered by :name', ['name' => '<a href="https://pagible.com">PagibleAI CMS</a>']) !!}
                 </span>
                 @if($project->license ?? null)
                     <span class="license">{{ __('License') }}: {{ $project->license }}</span>

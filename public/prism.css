@@ -22,7 +22,7 @@ pre[class*=language-] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #64748B;
+    color: #8392A9;
     font-style: italic;
 }
 

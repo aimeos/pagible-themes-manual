@@ -74,7 +74,7 @@ main nav.sidebar a:hover {
 main nav.sidebar a.active {
     color: var(--pico-primary);
     text-decoration: none;
-    background-color: color-mix(in srgb, var(--pico-primary) 10%, #00000000);
+    background-color: color-mix(in srgb, var(--pico-primary) 7%, #00000000);
     font-weight: 600;
 }
 

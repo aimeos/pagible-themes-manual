@@ -17,7 +17,7 @@
     --pico-color: #334155;
     --pico-background-color: #FFFFFF;
     --pico-text-selection-color: #2563EB33;
-    --pico-muted-color: #64748B;
+    --pico-muted-color: #5B6B80;
     --pico-muted-border-color: #E2E8F0;
     --pico-muted-background-color: #F8FAFC;
     --pico-card-background-color: #FFFFFF;
@@ -367,6 +367,12 @@ header nav .brand .version {
     white-space: nowrap;
 }
 
+@media (max-width: 400px) {
+    header nav .brand .version {
+        display: none;
+    }
+}
+
 header nav li.search a {
     gap: 0.5rem;
     min-width: 14rem;
@@ -451,6 +457,17 @@ header nav .sidebar-close button {
     header nav .menu-open.show,
     header nav .menu-close.show {
         display: flex;
+    }
+
+    header nav > ul:first-child,
+    header nav > ul > li,
+    header nav ul.menu-open {
+        margin-inline: 0;
+    }
+
+    header nav > ul:first-child {
+        flex-shrink: 1;
+        min-width: 0;
     }
 
     header nav .brand {
@@ -830,11 +847,34 @@ body > footer.bottom {
 }
 
 body > footer.bottom .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 0.5rem 2rem;
     padding: 1.5rem min(5%, 2rem) 2rem;
     border-top: 1px solid var(--pico-muted-border-color);
+}
+
+body > footer.bottom .powered {
+    grid-column: 2;
+}
+
+body > footer.bottom .powered a {
+    color: inherit;
+}
+
+body > footer.bottom .license {
+    justify-self: end;
+}
+
+@media (max-width: 576px) {
+    body > footer.bottom .container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    body > footer.bottom .container > * {
+        grid-column: auto;
+        justify-self: center;
+    }
 }
